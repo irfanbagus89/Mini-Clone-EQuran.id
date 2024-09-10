@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState, createContext } from "react";
 import { config } from "../configs";
 
-const Contex = createContext(null);
+const Context = createContext(null);
 
 const Provider = ({ children }) => {
   const [daftarSurat, setDaftarSurat] = useState([]);
@@ -66,12 +66,12 @@ const Provider = ({ children }) => {
 
   useEffect(() => {
     getDaftarSurat();
-    getDetailSurat();
-    getTafsir();
+    // getDetailSurat();
+    // getTafsir();
   }, []);
 
   return (
-    <Contex.Provider
+    <Context.Provider
       value={{
         daftarSurat,
         detailSurat,
@@ -83,8 +83,8 @@ const Provider = ({ children }) => {
       }}
     >
       {children}
-    </Contex.Provider>
+    </Context.Provider>
   );
 };
 
-export { Contex, Provider };
+export { Context, Provider };
