@@ -6,7 +6,7 @@ import { config } from "../configs";
 const Context = createContext(null);
 
 const Provider = ({ children }) => {
-  const [daftarSurat, setDaftarSurat] = useState([]);
+  const [daftarSurat, setDaftarSurat] = useState();
   const [detailSurat, setDetailSurat] = useState([]);
   const [tafsir, setTafsir] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,7 @@ const Provider = ({ children }) => {
         },
       });
 
-      setDaftarSurat(res.data.results);
+      setDaftarSurat(res.data.data);
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
@@ -37,7 +37,7 @@ const Provider = ({ children }) => {
           accept: "application/json",
         },
       });
-      setDetailSurat(res.data.results);
+      setDetailSurat(res.data.data);
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
@@ -55,7 +55,7 @@ const Provider = ({ children }) => {
         },
       });
 
-      setTafsir(res.data.results);
+      setTafsir(res.data.data);
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
@@ -66,8 +66,8 @@ const Provider = ({ children }) => {
 
   useEffect(() => {
     getDaftarSurat();
-    // getDetailSurat();
-    // getTafsir();
+    getDetailSurat();
+    getTafsir();
   }, []);
 
   return (
