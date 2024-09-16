@@ -10,13 +10,11 @@ function Dasboard() {
       ) : (
         <>
           {daftarSurat != undefined ? (
-            <div className="w-full min-h-[85vh] flex">
-              {console.log(daftarSurat)
-              }
-              <aside className="hidden md:block w-[25%] p-4 overflow-y-auto">
+            <div className="w-full h-[85vh] flex">
+              <aside className="hidden lg:flex w-[25%] p-4 overflow-y-scroll lg:flex-col lg:justify-evenly lg:gap-4">
                 <CardList data={daftarSurat} isLoading={isLoading}/>
               </aside>
-              <main className="w-full md:w-[75%] bg-blue-300"></main>
+              <main className="w-full lg:w-[75%] bg-blue-300"></main>
             </div>
           ) : (
             ""

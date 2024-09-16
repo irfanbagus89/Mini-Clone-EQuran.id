@@ -1,8 +1,9 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import MyLayout from "../components/MyLayout";
 import Navbar from "../components/Navbar/Navbar";
 import Dasboard from "../pages/Dasboard/Dasboard";
+
 function AppRoute() {
   return (
     <Routes>
@@ -15,14 +16,8 @@ function AppRoute() {
           </>
         }
       >
-        <Route
-          path="*"
-          element={
-            <>
-              <Dasboard />
-            </>
-          }
-        />
+        <Route path="*" element={<Navigate to="/surah/1" replace />} />
+        <Route path="surah/:id" element={<Dasboard />} />
       </Route>
     </Routes>
   );
