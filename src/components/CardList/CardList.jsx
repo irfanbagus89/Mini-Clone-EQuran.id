@@ -33,7 +33,7 @@ function CardList({ data, isLoading }) {
             </div>
             <div className="w-[70%] h-full flex flex-col justify-between py-4 text-left">
               <h1 className={`font-bold text-xl ${selectid == data.nomor ? 'text-pink' : ''}`}>{data.namaLatin}</h1>
-              <h2 className={`font-medium text-sm ${selectid == data.nomor ? 'text-pinkungu' : 'opacity-50 hover:opacity-100'}`}>{data.arti}</h2>
+              <h2 className={`font-medium text-sm ${selectid == data.nomor ? 'text-pinkungu' : 'opacity-50'}`}>{data.arti}</h2>
             </div>
           </div>
         );

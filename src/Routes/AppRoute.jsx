@@ -17,7 +17,7 @@ function AppRoute() {
         }
       >
         <Route path="*" element={<Navigate to="/surah/1" replace />} />
-        <Route path="surah/:id" element={<Dasboard />} />
+        <Route path="surah/:id" element={<Dasboard id={1}/>} />
       </Route>
     </Routes>
   );
