@@ -8,5 +8,5 @@
     @apply font-main;
 }
 body{
-    @apply overflow-hidden
+    @apply overflow-hidden bg-white
 }

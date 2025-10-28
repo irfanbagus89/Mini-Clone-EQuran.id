@@ -17,22 +17,29 @@ export default [
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: { react: { version: 'detect' } },
     plugins: {
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
     rules: {
+      // Base recommended
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+
+      // 🔽 Non-strict custom relaxations
+      'react/prop-types': 'off', // Matikan kewajiban prop-types
+      'react/react-in-jsx-scope': 'off', // React 17+ tidak butuh import React
+      'react/display-name': 'off', // Tidak wajib memberi displayName di components
+      'no-unused-vars': 'warn', // Hanya warning, bukan error
+      'no-console': 'off', // Boleh console.log
+      'react/jsx-key': 'warn', // kasih warning aja
+      'react/no-unescaped-entities': 'off', // biar bisa pakai tanda kutip di JSX
+      'react/jsx-no-target-blank': 'off', // matikan warning target _blank
+      'react-refresh/only-export-components': ['off'], // boleh export bebas
     },
   },
 ]

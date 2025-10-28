@@ -1,4 +1,3 @@
-import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import DetailAyat from "./DetailAyat";
 
@@ -8,7 +7,7 @@ function DetailSurat({ detailSurat, isLoading }) {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div className="w-full">
+        <div className="w-full bg-white">
           <div className="w-full h-40 bg-blue-600 rounded-xl"></div>
           <div className="w-full py-4 flex">
             <div className="w-1/2">
