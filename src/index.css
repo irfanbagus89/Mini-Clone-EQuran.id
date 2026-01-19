@@ -1,12 +1,8 @@
-@import url(https://db.onlinewebfonts.com/c/eb289d26afbfd6114ddfdc053113218e?family=LPMQ+Isep+Misbah);
-
+@import url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
-    @apply font-main;
-}
-body{
-    @apply overflow-hidden bg-white
+.font-arabic {
+  font-family: "Amiri", serif;
 }

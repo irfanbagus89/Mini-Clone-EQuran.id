@@ -1,13 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
+import App from "./App";
 import "./index.css";
-import { Provider } from "./utils/fetch.jsx";
+import { QuranProvider } from "./context/QuranContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider>
+    <QuranProvider>
       <App />
-    </Provider>
+    </QuranProvider>
   </StrictMode>
 );
